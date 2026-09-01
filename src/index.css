@@ -1,1 +1,71 @@
 @import "tailwindcss";
+
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/Fraunces.woff2") format(woff2);
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face{
+  font-family: "Inter";
+  src: url("/fonts/Inter.woff2") format(woff2);
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiri";
+  src: url("/fonts/Amiri-Bold.woff2") format(woff2);
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiri";
+  src: url("/fonts/Amiri-Regular.woff2") format(woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+
+  --font-heading: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+  --font-arabic: "Amiri", serif;
+
+  --color-primary-50: #D3ECE1;
+  --color-primary-100: #C2DFD2;
+  --color-primary-150: #B2D2C4;
+  --color-primary-200: #A1C5B5;
+  --color-primary-250: #91B8A7;
+  --color-primary-300: #6F9E89;
+  --color-primary-400: #4E846C;
+  --color-primary-500: #2D6A4F;
+  --color-primary-600: #24553F;
+  --color-primary-700: #1B402F;
+  --color-primary-800: #122A20;
+  --color-primary-850: #0E2018;
+  --color-primary-900: #091510;
+  --color-primary-950: #050B08;
+
+
+  --color-accent-50: #F7F4EE;
+  --color-accent-100: #EFE8DD;
+  --color-accent-150: #E7DDCD;
+  --color-accent-200: #DFD1BC;
+  --color-accent-300: #D0BB9A;
+  --color-accent-400: #C0A479;
+  --color-accent-500: #B08D57;
+  --color-accent-600: #8D7146;
+  --color-accent-700: #6A5534;
+  --color-accent-800: #463823;
+  --color-accent-850: #352A1A;
+  --color-accent-900: #231C11;
+  --color-accent-950: #120E09;
+}
