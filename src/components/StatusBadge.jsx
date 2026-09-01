@@ -12,4 +12,6 @@ export default function StatusBadge({status}){
     if(status === 'next') return(
         <span className="font-semibold text-accent-500 text-xs px-2 py-1 rounded-full bg-accent-100">UP NEXT</span>
     );
+
+    return null;
 }
