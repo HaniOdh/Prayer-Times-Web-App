@@ -4,7 +4,7 @@ import StatusBadge from "./StatusBadge";
 export default function PrayerTimeRow({icon, name, status, time}){
     return(
         status==='now' ? 
-        <span className="flex m-auto w-full justify-between bg-primary-50 p-3 font-semibold text-primary-500">
+        <span className="flex m-auto w-full justify-between bg-primary-50 p-3 font-semibold text-primary-500 rounded-xl">
             <span className="flex gap-3">
                 <span className="">{icon}</span>
                 {name}
