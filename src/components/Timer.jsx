@@ -12,14 +12,14 @@ export default function Timer({duration}){
                 <p className="text-xs text-center mt-2 text-primary-150">HOURS</p>
             </div>
 
-            <p className="text-5xl">:</p>
+            <p className="text-4xl md:text-5xl text-primary-150">:</p>
 
             <div className="flex-col">
                 <div className="font-heading text-5xl md:text-6xl text-primary-50">{minutes}</div>
                 <p className="text-xs text-center mt-2 text-primary-150">MINUTES</p>
             </div>
 
-            <p className="text-5xl">:</p>
+            <p className="text-4xl md:text-5xl text-primary-150">:</p>
 
             <div className="flex-col">
                 <div className="font-heading text-5xl md:text-6xl text-primary-50">{seconds}</div>
