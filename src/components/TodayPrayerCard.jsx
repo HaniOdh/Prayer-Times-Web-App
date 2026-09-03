@@ -15,7 +15,7 @@ export default function TodayPrayerCard({location, hijriDate, date, prayers}){
     ]
 
     return(
-        <div className="flex flex-col border border-gray-300 rounded-xl p-7 lg:col-span-5">
+        <div className="flex flex-col border border-gray-300 rounded-xl p-7">
             <div>
                 <h2 className="font-heading text-2xl">Today's times</h2>
                 <span className="text-gray-500 text-sm flex justify-between">

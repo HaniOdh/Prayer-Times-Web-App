@@ -6,7 +6,7 @@ export default function Timer({duration}){
     const {seconds, minutes, hours} = useCountdown(duration);
 
     return(
-        <div className="flex gap-8">
+        <span className="flex gap-8 mt-8">
             <div className="flex-col">
                 <div className="font-heading text-5xl md:text-6xl text-primary-50">{hours}</div>
                 <p className="text-xs text-center mt-2 text-primary-150">HOURS</p>
@@ -25,6 +25,6 @@ export default function Timer({duration}){
                 <div className="font-heading text-5xl md:text-6xl text-primary-50">{seconds}</div>
                 <p className="text-xs text-center mt-2 text-primary-150">SECONDS</p>
             </div>
-        </div>
+        </span>
     );
 }
