@@ -3,6 +3,7 @@ import TodayPrayerCard from './components/TodayPrayerCard';
 import NextPrayerCard from './components/NextPrayerCard';
 import CalendarHeader from './components/CalendarHeader';
 import CalendarPrayerPill from './components/CalendarPrayerPill';
+import CalendarGrid from './components/CalendarGrid';
 
 function App() {
 
@@ -48,6 +49,9 @@ function App() {
             time={'04:34 PM'}
           />
         </div>
+        <CalendarGrid
+          currentMonth={'2026-09-06'} 
+        />
       </div>
     </div>
   )
