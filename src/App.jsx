@@ -2,6 +2,7 @@ import './App.css'
 import TodayPrayerCard from './components/TodayPrayerCard';
 import NextPrayerCard from './components/NextPrayerCard';
 import CalendarHeader from './components/CalendarHeader';
+import CalendarPrayerPill from './components/CalendarPrayerPill';
 
 function App() {
 
@@ -25,6 +26,28 @@ function App() {
         <CalendarHeader
           currentMonth={'June 2026'} 
         />
+        <div className='flex gap-2'>
+          <CalendarPrayerPill 
+            prayer={'Asr'}
+            time={'04:34 PM'}
+          />
+          <CalendarPrayerPill 
+            prayer={'Asr'}
+            time={'04:34 PM'}
+          />
+          <CalendarPrayerPill 
+            prayer={'Asr'}
+            time={'04:34 PM'}
+          />
+          <CalendarPrayerPill 
+            prayer={'Asr'}
+            time={'04:34 PM'}
+          />
+          <CalendarPrayerPill 
+            prayer={'Asr'}
+            time={'04:34 PM'}
+          />
+        </div>
       </div>
     </div>
   )
