@@ -1,11 +1,12 @@
 import './App.css'
 import TodayPrayerCard from './components/TodayPrayerCard';
 import NextPrayerCard from './components/NextPrayerCard';
+import CalendarHeader from './components/CalendarHeader';
 
 function App() {
 
   return (
-    <div className='max-w-7xl mx-auto grid grid-cols-12 items-start'>
+    <div className='max-w-7xl mx-auto grid grid-cols-12 items-start gap-3'>
       <div className='flex flex-col gap-6 col-span-6'>
         <NextPrayerCard
           nextPrayer={"Isha"}
@@ -18,6 +19,11 @@ function App() {
           hijriDate={"17 Rabīʿ al-awwal 1448"}
           date={"Sunday, 30/08/2026"} 
           prayers={""}
+        />
+      </div>
+      <div className='col-span-6'>
+        <CalendarHeader
+          currentMonth={'June 2026'} 
         />
       </div>
     </div>

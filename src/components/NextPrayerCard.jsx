@@ -3,7 +3,7 @@ import Timer from "./Timer";
 
 export default function NextPrayerCard({nextPrayer, duration, time}){
     return(
-        <div className="bg-primary-500 p-10 rounded-xl">
+        <div className="bg-primary-600 p-10 rounded-xl">
             <span className="text-primary-150 text-sm">NEXT PRAYER</span>
 
             <span className="flex gap-3 mt-2 items-baseline">
