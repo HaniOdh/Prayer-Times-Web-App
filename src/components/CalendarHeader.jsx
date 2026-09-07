@@ -6,7 +6,7 @@ export default function CalendarHeader({currentMonth, onPreviousMonth, onNextMon
         <div className='flex justify-between items-center'>
             <div className='flex flex-col'>
                 <h2 className='font-heading text-2xl'>Monthly timetable</h2>
-                <p className='text-sm text-gray-500'>{currentMonth}</p>
+                <p className='text-sm text-gray-500'>{currentMonth.format('MMMM-YYYY')}</p>
             </div>
             <div className='flex gap-2'>
                 <button

@@ -4,11 +4,12 @@ import NextPrayerCard from './components/NextPrayerCard';
 import CalendarHeader from './components/CalendarHeader';
 import CalendarPrayerPill from './components/CalendarPrayerPill';
 import CalendarGrid from './components/CalendarGrid';
+import MonthlyTimetable from './components/MonthlyTimetable';
 
 function App() {
 
   return (
-    <div className='max-w-7xl mx-auto grid grid-cols-12 items-start gap-3'>
+    <div className='max-w-7xl mx-auto grid grid-cols-12 items-start gap-6'>
       <div className='flex flex-col gap-6 col-span-6'>
         <NextPrayerCard
           nextPrayer={"Isha"}
@@ -24,34 +25,7 @@ function App() {
         />
       </div>
       <div className='col-span-6'>
-        <CalendarHeader
-          currentMonth={'June 2026'} 
-        />
-        <div className='flex gap-2'>
-          <CalendarPrayerPill 
-            prayer={'Asr'}
-            time={'04:34 PM'}
-          />
-          <CalendarPrayerPill 
-            prayer={'Asr'}
-            time={'04:34 PM'}
-          />
-          <CalendarPrayerPill 
-            prayer={'Asr'}
-            time={'04:34 PM'}
-          />
-          <CalendarPrayerPill 
-            prayer={'Asr'}
-            time={'04:34 PM'}
-          />
-          <CalendarPrayerPill 
-            prayer={'Asr'}
-            time={'04:34 PM'}
-          />
-        </div>
-        <CalendarGrid
-          currentMonth={'2026-09-06'} 
-        />
+        <MonthlyTimetable />
       </div>
     </div>
   )
