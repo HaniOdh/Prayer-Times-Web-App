@@ -6,6 +6,7 @@ import CalendarPrayerPill from './components/CalendarPrayerPill';
 import CalendarGrid from './components/CalendarGrid';
 import MonthlyTimetable from './components/MonthlyTimetable';
 import LocationDropdown from './components/LocationDropdown';
+import LanguageSwitchButton from './components/LanguageSwitchButton';
 
 function App() {
 
@@ -27,8 +28,8 @@ function App() {
       </div>
       <div className='col-span-6'>
         <MonthlyTimetable />
+        <LanguageSwitchButton />
       </div>
-      <LocationDropdown />
     </div>
   )
 }
