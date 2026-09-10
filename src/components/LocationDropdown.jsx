@@ -1,17 +1,13 @@
 import { ChevronDown, MapPin } from "lucide-react";
 
 
-export default function LocationDropdown({selectedId, isDetecting, presetCities, onSelectChange}){
+export default function LocationDropdown({
+    selectedId, 
+    isDetecting, 
+    presetCities, 
+    onSelectChange
+}){
 
-    const PRESET_CITIES = [
-    { id: "mecca", name: "Mecca", latitude: 21.4225, longitude: 39.8262 },
-    { id: "medina", name: "Medina", latitude: 24.4672, longitude: 39.6112 },
-    { id: "cairo", name: "Cairo", latitude: 30.0444, longitude: 31.2357 },
-    { id: "algiers", name: "Algiers", latitude: 36.7538, longitude: 3.0588 },
-    { id: "istanbul", name: "Istanbul", latitude: 41.0082, longitude: 28.9784 },
-    { id: "london", name: "London", latitude: 51.5074, longitude: -0.1278 },
-    ];
-    presetCities = PRESET_CITIES;
     return(
         <div className="relative inline-block w-fit">
             <select 
