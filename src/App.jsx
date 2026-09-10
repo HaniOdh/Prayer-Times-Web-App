@@ -7,6 +7,7 @@ import CalendarGrid from './components/CalendarGrid';
 import MonthlyTimetable from './components/MonthlyTimetable';
 import LocationDropdown from './components/LocationDropdown';
 import LanguageSwitchButton from './components/LanguageSwitchButton';
+import DarkModeSwitch from './components/DarkModeSwitch';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
       <div className='col-span-6'>
         <MonthlyTimetable />
         <LanguageSwitchButton />
+        <DarkModeSwitch />
       </div>
     </div>
   )
