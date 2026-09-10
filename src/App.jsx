@@ -8,6 +8,7 @@ import MonthlyTimetable from './components/MonthlyTimetable';
 import LocationDropdown from './components/LocationDropdown';
 import LanguageSwitchButton from './components/LanguageSwitchButton';
 import DarkModeSwitch from './components/DarkModeSwitch';
+import AwqatLogo from './components/AwqatLogo';
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
         <MonthlyTimetable />
         <LanguageSwitchButton />
         <DarkModeSwitch />
+        <AwqatLogo />
       </div>
     </div>
   )

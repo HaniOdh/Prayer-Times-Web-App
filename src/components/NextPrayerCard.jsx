@@ -7,7 +7,7 @@ export default function NextPrayerCard({nextPrayer, duration, time}){
             <span className="text-primary-150 text-sm">NEXT PRAYER</span>
 
             <span className="flex gap-3 mt-2 items-baseline">
-                <h2 className="font-heading text-5xl text-primary-50">{nextPrayer}</h2>
+                <h1 className="font-heading text-5xl text-primary-50">{nextPrayer}</h1>
                 <p className="text-primary-150 text-sm">at {time}</p>
             </span>
 
