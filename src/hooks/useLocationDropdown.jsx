@@ -18,7 +18,7 @@ export function useLocationDropdown(onCityChange){
 
     const fallbackToDefault = useCallback(() => {
         const defaultCity = PRESET_CITIES[0];
-        setSelectedId(defaultCity);
+        setSelectedId(defaultCity.id);
         if(onCityChange){
             onCityChange({
                 name: defaultCity.name,
