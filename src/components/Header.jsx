@@ -14,7 +14,7 @@ export default function Header({onLocationChange}){
     handleSelectChange } = useLocationDropdown(onLocationChange);
 
     return(
-        <div className="flex justify-between items-center my-6">
+        <header className="flex justify-between items-center my-6">
             <AwqatLogo />
             <div className="flex gap-2">
                 <LocationDropdown
@@ -26,6 +26,6 @@ export default function Header({onLocationChange}){
                 <LanguageSwitchButton />
                 <DarkModeSwitch />
             </div>
-        </div>
+        </header>
     );
 }
