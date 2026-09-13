@@ -1,14 +1,12 @@
 import './App.css'
-import Header from './components/Header';
-import PrayerDashboard from './components/PrayerDashboard';
+import Layout from './components/Layout';
 
 
 function App() {
 
   return (
-    <div className='max-w-7xl mx-auto'>
-      <Header />
-      <PrayerDashboard />
+    <div>
+      <Layout />
     </div>
   );
 }
