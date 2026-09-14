@@ -1,25 +1,20 @@
-import { useState } from "react";
-import dayjs from "dayjs";
 import CalendarGrid from "./CalendarGrid";
 import CalendarHeader from "./CalendarHeader";
 import DailySummary from "./DailySummary";
 
 
-export default function MonthlyTimetable(){
-
-    const [currentMonth, setCurrentMonth] = useState(dayjs());
-    const [selectedDate, setSelectedDate] = useState(dayjs().format('YYYY-MM-DD'));
+export default function MonthlyTimetable({ currentMonth, onMonthChange, selectedDate, onDateChange }){
 
     const handlePrevMonth = () => {
         const newMonth = currentMonth.subtract(1, 'month');
-        setCurrentMonth(newMonth);
-        setSelectedDate(newMonth.startOf('month').format('YYYY-MM-DD')); 
+        onMonthChange(newMonth);
+        onDateChange(newMonth.startOf('month').format('YYYY-MM-DD')); 
     }
 
     const handleNextMonth = () => {
         const newMonth = currentMonth.add(1, 'month');
-        setCurrentMonth(newMonth);
-        setSelectedDate(newMonth.startOf('month').format('YYYY-MM-DD'));
+        onMonthChange(newMonth);
+        onDateChange(newMonth.startOf('month').format('YYYY-MM-DD'));
     }
 
     const mockDate = {
@@ -33,6 +28,8 @@ export default function MonthlyTimetable(){
         }
     };
 
+    console.log("hello the selected date is:", {selectedDate});
+
     return(
         <div className="flex flex-col gap-5 p-7 border border-gray-300 rounded-xl">
             <CalendarHeader 
@@ -44,7 +41,7 @@ export default function MonthlyTimetable(){
             <CalendarGrid 
                 currentMonth={currentMonth}
                 selectedDate={selectedDate}
-                onSelectDay={setSelectedDate}
+                onSelectDay={onDateChange}
             />
 
             <DailySummary

@@ -1,11 +1,34 @@
 import React from "react";
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
 import PrayerTimeRow from "./PrayerTimeRow";
 import Separator from "./Separator";
 
+dayjs.extend(customParseFormat);
+
+
+const PRAYER_KEYS = ["Fajr", "Sunrise", "Dhuhr", "Asr", "Maghrib", "Isha"];
+
+const formatPrayerTime = (rawTimeStr) => {
+    if(!rawTimeStr) return "";
+
+    const cleanTime = rawTimeStr.split(" ")[0];
+    return dayjs(cleanTime, "HH:mm").format("hh:mm A");
+}
 
 export default function TodayPrayerCard({location, hijriDate, date, prayers}){
 
-    const defaultPrayers = prayers || [
+    console.log(prayers.Asr);
+
+    const prayerList = PRAYER_KEYS.map((name) => ({
+        name,
+        time: formatPrayerTime(prayers[name]),
+        status: null,
+    }));
+
+    console.log(prayerList[0].time);
+
+    const defaultPrayers = prayerList || [
         {name: "Fajr", time: "5:01 AM", status: null},
         {name: "Sunrise", time: "6:04 AM", status: null},
         {name: "Dhuhr", time: "12:21 PM", status: null},

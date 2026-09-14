@@ -26,6 +26,11 @@ export function usePrayerTimes({ year, month, latitude, longitude }){
                 const response = await fetch(`${BASE_URL}/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}`,
                     { signal: abortControllerRef.current?.signal }
                 );
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status}`);
+                }
+
                 const data = await response.json();
                 setTimes(data.data);
             }catch(e){
