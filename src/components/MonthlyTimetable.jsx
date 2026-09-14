@@ -3,7 +3,7 @@ import CalendarHeader from "./CalendarHeader";
 import DailySummary from "./DailySummary";
 
 
-export default function MonthlyTimetable({ currentMonth, onMonthChange, selectedDate, onDateChange }){
+export default function MonthlyTimetable({ currentMonth, onMonthChange, selectedDate, onDateChange, selectedDayData }){
 
     const handlePrevMonth = () => {
         const newMonth = currentMonth.subtract(1, 'month');
@@ -17,18 +17,10 @@ export default function MonthlyTimetable({ currentMonth, onMonthChange, selected
         onDateChange(newMonth.startOf('month').format('YYYY-MM-DD'));
     }
 
-    const mockDate = {
-        hijri: "17 Rabīʿ al-awwal 1448",
-        timings: {
-            Fajr: "05:45 AM",
-            Dhuhr: "12:37 PM",
-            Asr: "04:15 PM",
-            Maghrib: "06:30 PM",
-            Isha: "07:53 PM"
-        }
+    const dayData = {
+        hijriDate: selectedDayData.hijriDate,
+        timings: selectedDayData.timings,
     };
-
-    console.log("hello the selected date is:", {selectedDate});
 
     return(
         <div className="flex flex-col gap-5 p-7 border border-gray-300 rounded-xl">
@@ -46,7 +38,7 @@ export default function MonthlyTimetable({ currentMonth, onMonthChange, selected
 
             <DailySummary
                 selectedDate={selectedDate}
-                dayData={mockDate}
+                dayData={dayData}
             />
         </div>
     );

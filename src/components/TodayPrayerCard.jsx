@@ -18,24 +18,22 @@ const formatPrayerTime = (rawTimeStr) => {
 
 export default function TodayPrayerCard({location, hijriDate, date, prayers}){
 
-    console.log(prayers.Asr);
+    const fallbackPrayers = [
+        { name: "Fajr", time: "5:01 AM", status: null },
+        { name: "Sunrise", time: "6:04 AM", status: null },
+        { name: "Dhuhr", time: "12:21 PM", status: null },
+        { name: "Asr", time: "3:47 PM", status: null },
+        { name: "Maghrib", time: "6:39 PM", status: "now" },
+        { name: "Isha", time: "7:41 PM", status: "next" },
+    ];
 
-    const prayerList = PRAYER_KEYS.map((name) => ({
-        name,
-        time: formatPrayerTime(prayers[name]),
-        status: null,
-    }));
-
-    console.log(prayerList[0].time);
-
-    const defaultPrayers = prayerList || [
-        {name: "Fajr", time: "5:01 AM", status: null},
-        {name: "Sunrise", time: "6:04 AM", status: null},
-        {name: "Dhuhr", time: "12:21 PM", status: null},
-        {name: "Asr", time: "3:47 PM", status: null},
-        {name: "Maghrib", time: "6:39 PM", status: "now"},
-        {name: "Isha", time: "7:41 PM", status: "next"},
-    ]
+    const prayerList = prayers
+        ? PRAYER_KEYS.map((name) => ({
+              name,
+              time: formatPrayerTime(prayers[name]),
+              status: null,
+          }))
+        : fallbackPrayers;
 
     return(
         <div className="flex flex-col border border-gray-300 rounded-xl p-7">
@@ -47,7 +45,7 @@ export default function TodayPrayerCard({location, hijriDate, date, prayers}){
                 </span>
             </div>
             <div className="mt-5">
-                {defaultPrayers.map((prayer, index)=>(
+                {prayerList.map((prayer, index)=>(
                     <React.Fragment key={prayer.name}>
                         <PrayerTimeRow
                             icon={prayer.icon}
@@ -55,7 +53,7 @@ export default function TodayPrayerCard({location, hijriDate, date, prayers}){
                             status={prayer.status}
                             time={prayer.time}
                         />
-                        {index !== defaultPrayers.length-1 && <Separator />}
+                        {index !== prayerList.length-1 && <Separator />}
                     </React.Fragment>
                 ))}
             </div>
