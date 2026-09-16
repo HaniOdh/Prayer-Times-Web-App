@@ -1,9 +1,15 @@
-import { useCountdown } from "../hooks/useCountdown";
 
 
-export default function Timer({duration}){
 
-    const {seconds, minutes, hours} = useCountdown(duration);
+export default function Timer({ duration = 0 }){
+
+    const total_seconds = Math.floor(duration / 1000);
+    const total_minutes = Math.floor(total_seconds / 60);
+    const total_hours = Math.floor(total_minutes / 60);
+
+    const seconds = String(total_seconds % 60).padStart(2, '0');
+    const minutes = String(total_minutes % 60).padStart(2, '0');
+    const hours = String(total_hours % 24).padStart(2, '0');
 
     return(
         <span className="flex gap-8 mt-8">

@@ -5,10 +5,10 @@ dayjs.extend(customParseFormat);
 
 const PRAYER_KEYS = ["Fajr", "Dhuhr", "Asr" , "Maghrib", "Isha"];
 
-export function getNextPrayer(monthTimes){
+export function getNextPrayer(monthTimes, nowMs = Date.now()){
     if(!monthTimes || monthTimes.length === 0) return null;
 
-    const now = dayjs();
+    const now = dayjs(nowMs);
     const todayFormatted = now.format("DD-MM-YYYY");
     const todayStr = now.format("YYYY-MM-DD");
 
@@ -16,7 +16,7 @@ export function getNextPrayer(monthTimes){
         (item) => item.date.gregorian.date === todayFormatted
     );
 
-    if(!todayData.timings) return null;
+    if(!todayData?.timings) return null;
 
     for(const key of PRAYER_KEYS){
         const rawTime = todayData.timings[key]?.split(" ")[0];

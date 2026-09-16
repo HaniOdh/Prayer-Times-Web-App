@@ -5,11 +5,14 @@ import TodayPrayerCard from "./TodayPrayerCard";
 import MonthlyTimetable from "./MonthlyTimetable";
 import { usePrayerTimes } from "../hooks/usePrayerTimes";
 import { getNextPrayer } from "../utils/prayerHelpers";
+import { useNow } from "../hooks/useNow";
 
 export default function PrayerDashboard({ selectedLocation }) {
     const [selectedDate, setSelectedDate] = useState(dayjs().format('YYYY-MM-DD'));
     const [selectedMonth, setSelectedMonth] = useState(dayjs());
 
+
+    const now = useNow();
 
     const { times: currentMonthTimes } = usePrayerTimes({
         year: dayjs().year(),
@@ -29,7 +32,7 @@ export default function PrayerDashboard({ selectedLocation }) {
     console.log(error);
 
 
-    const { nextPrayer, targetTime, formattedTime, remainingTime } = getNextPrayer(currentMonthTimes) || {};
+    const { nextPrayer, targetTime, formattedTime, remainingTime } = getNextPrayer(currentMonthTimes, now) || {};
 
     const formattedDate = dayjs().format('DD-MM-YYYY');
     const currentDayData = currentMonthTimes?.find(
