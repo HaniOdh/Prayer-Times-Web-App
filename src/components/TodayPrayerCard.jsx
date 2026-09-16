@@ -35,6 +35,8 @@ export default function TodayPrayerCard({location, hijriDate, date, prayers}){
           }))
         : fallbackPrayers;
 
+        console.log("prayers:", prayers);
+
     return(
         <div className="flex flex-col border border-gray-300 rounded-xl p-7">
             <div>

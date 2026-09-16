@@ -18,8 +18,8 @@ export default function MonthlyTimetable({ currentMonth, onMonthChange, selected
     }
 
     const dayData = {
-        hijriDate: selectedDayData.hijriDate,
-        timings: selectedDayData.timings,
+        hijriDate: selectedDayData?.hijriDate,
+        timings: selectedDayData?.timings,
     };
 
     return(
