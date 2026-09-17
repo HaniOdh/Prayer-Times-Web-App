@@ -21,7 +21,7 @@ export default function CalendarGrid({currentMonth, selectedDate, onSelectDay}){
                 ))}
             </div>
 
-            <div className='grid grid-cols-7 gap-3'>
+            <div className='grid grid-cols-7 md:gap-3'>
                 {paddingSlots.map((_, index) =>(
                     <div key={index} className='h-10'/>
                 ))}

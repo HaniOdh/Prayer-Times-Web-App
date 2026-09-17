@@ -3,6 +3,6 @@
 
 export default function Separator(){
     return(
-        <div className="h-1/2 border-t border-gray-300 mx-5"></div>
+        <div className="h-1/2 border-t border-gray-300 mx-2 md:mx-5"></div>
     );
 }

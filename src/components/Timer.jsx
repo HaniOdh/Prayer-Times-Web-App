@@ -12,7 +12,7 @@ export default function Timer({ duration = 0 }){
     const hours = String(total_hours % 24).padStart(2, '0');
 
     return(
-        <span className="flex gap-8 mt-8">
+        <span className="flex gap-4 md:gap-8 mt-8">
             <div className="flex-col">
                 <div className="font-heading text-5xl md:text-6xl text-primary-50">{hours}</div>
                 <p className="text-xs text-center mt-2 text-primary-150">HOURS</p>

@@ -14,7 +14,7 @@ export default function Header({onLocationChange}){
     handleSelectChange } = useLocationDropdown(onLocationChange);
 
     return(
-        <header className="flex justify-between items-center my-6">
+        <header className="flex flex-col md:flex-row gap-5 md:justify-between flex-start my-6">
             <AwqatLogo />
             <div className="flex gap-2">
                 <LocationDropdown

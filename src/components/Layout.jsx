@@ -13,12 +13,12 @@ export default function Layout(){
     });
 
     return(
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-xs sm:max-w-sm md:max-w-4xl lg:max-w-5xl xl:max-w-7xl mx-auto'>
             <Header
                 onLocationChange={setSelectedLocation}
             />
             <PrayerDashboard
-                selectedLocation={selectedLocation} 
+                selectedLocation={selectedLocation}
             />
         </div>
     );
