@@ -5,6 +5,7 @@ import TodayPrayerCard from "./TodayPrayerCard";
 import MonthlyTimetable from "./MonthlyTimetable";
 import { usePrayerTimes } from "../hooks/usePrayerTimes";
 import LoadingCard from "./LoadingCard";
+import ErrorCard from "./ErrorCard";
 
 export default function PrayerDashboard({ selectedLocation }) {
     const [selectedDate, setSelectedDate] = useState(dayjs().format('YYYY-MM-DD'));
@@ -49,7 +50,11 @@ export default function PrayerDashboard({ selectedLocation }) {
     } : null;
 
     if(isLoading) return(
-        <loadingCard />
+        <LoadingCard />
+    );
+
+    if(error) return(
+        <ErrorCard />
     );
 
     return (
@@ -65,8 +70,6 @@ export default function PrayerDashboard({ selectedLocation }) {
                     date={todayPrayerCardData?.date}
                     prayers={todayPrayerCardData?.prayers}
                 />
-
-                <LoadingCard />
 
             </div>
             <div className='col-span-6'>
