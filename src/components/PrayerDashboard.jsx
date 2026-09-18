@@ -4,6 +4,7 @@ import NextPrayerCard from "./NextPrayerCard";
 import TodayPrayerCard from "./TodayPrayerCard";
 import MonthlyTimetable from "./MonthlyTimetable";
 import { usePrayerTimes } from "../hooks/usePrayerTimes";
+import LoadingCard from "./LoadingCard";
 
 export default function PrayerDashboard({ selectedLocation }) {
     const [selectedDate, setSelectedDate] = useState(dayjs().format('YYYY-MM-DD'));
@@ -23,9 +24,6 @@ export default function PrayerDashboard({ selectedLocation }) {
         latitude: selectedLocation.latitude,
         longitude: selectedLocation.longitude
     });
-
-    console.log(selectedMonthTimes);
-    console.log(error);
 
 
     const formattedDate = dayjs().format('DD-MM-YYYY');
@@ -50,6 +48,10 @@ export default function PrayerDashboard({ selectedLocation }) {
         timings: selectedDayData.timings,
     } : null;
 
+    if(isLoading) return(
+        <loadingCard />
+    );
+
     return (
         <div className='grid grid-cols-1 md:grid-cols-12 items-start gap-6 mb-6'>
             <div className='flex flex-col gap-6 col-span-6'>
@@ -63,6 +65,8 @@ export default function PrayerDashboard({ selectedLocation }) {
                     date={todayPrayerCardData?.date}
                     prayers={todayPrayerCardData?.prayers}
                 />
+
+                <LoadingCard />
 
             </div>
             <div className='col-span-6'>
