@@ -10,12 +10,12 @@ export default function NextPrayerCard({ currentMonthTimes }){
     const { nextPrayer, targetTime, formattedTime, remainingTime } = getNextPrayer(currentMonthTimes, now) || {};
 
     return(
-        <div className="bg-primary-600 p-8 md:p-10 rounded-xl">
-            <span className="text-primary-150 text-xs md:text-sm">NEXT PRAYER</span>
+        <div className="bg-primary p-8 md:p-10 rounded-xl">
+            <span className="text-primary-foreground text-xs md:text-sm">NEXT PRAYER</span>
 
             <span className="flex gap-3 mt-2 items-baseline">
                 <h1 className="font-heading text-4xl md:text-5xl text-primary-50">{nextPrayer}</h1>
-                <p className="text-primary-150 text-sm">at {formattedTime}</p>
+                <p className="text-primary-foreground text-sm">at {formattedTime}</p>
             </span>
 
             <Timer

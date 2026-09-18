@@ -1,17 +1,18 @@
-import { useState } from "react";
 import { Moon, Sun } from "lucide-react";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 
 export default function DarkModeSwitch(){
 
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const { isDark, toggle } = useDarkMode();
 
+    console.log(isDark);
     return(
         <button
-            onClick={() => setIsDarkMode(!isDarkMode)}
-            className="p-3 border border-gray-300 rounded-full hover:cursor-pointer hover:bg-gray-200"
+            onClick={toggle}
+            className="p-3 border border-border rounded-full hover:cursor-pointer hover:bg-gray-200 dark:hover:bg-black-900"
         >
-            {isDarkMode ? <Sun className="w-4 h-4 text-gray-800" /> : <Moon className="w-4 h-4 text-gray-800" />}
+            {isDark ? <Sun className="w-4 h-4 text-muted-foreground" /> : <Moon className="w-4 h-4 text-muted-foreground" />}
         </button>
     );
 }

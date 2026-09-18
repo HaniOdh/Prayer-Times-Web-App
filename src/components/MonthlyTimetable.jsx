@@ -23,7 +23,7 @@ export default function MonthlyTimetable({ currentMonth, onMonthChange, selected
     };
 
     return(
-        <div className="flex flex-col gap-5 p-7 border border-gray-300 rounded-xl">
+        <div className="flex flex-col gap-5 p-7 border border-border bg-card rounded-xl">
             <CalendarHeader 
                 currentMonth={currentMonth}
                 onNextMonth={handleNextMonth}

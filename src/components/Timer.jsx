@@ -15,21 +15,21 @@ export default function Timer({ duration = 0 }){
         <span className="flex gap-4 md:gap-8 mt-8">
             <div className="flex-col">
                 <div className="font-heading text-5xl md:text-6xl text-primary-50">{hours}</div>
-                <p className="text-xs text-center mt-2 text-primary-150">HOURS</p>
+                <p className="text-xs text-center mt-2 text-primary-foreground">HOURS</p>
             </div>
 
-            <p className="text-4xl md:text-5xl text-primary-150">:</p>
+            <p className="text-4xl md:text-5xl text-primary-foreground">:</p>
 
             <div className="flex-col">
                 <div className="font-heading text-5xl md:text-6xl text-primary-50">{minutes}</div>
-                <p className="text-xs text-center mt-2 text-primary-150">MINUTES</p>
+                <p className="text-xs text-center mt-2 text-primary-foreground">MINUTES</p>
             </div>
 
-            <p className="text-4xl md:text-5xl text-primary-150">:</p>
+            <p className="text-4xl md:text-5xl text-primary-foreground">:</p>
 
             <div className="flex-col">
                 <div className="font-heading text-5xl md:text-6xl text-primary-50">{seconds}</div>
-                <p className="text-xs text-center mt-2 text-primary-150">SECONDS</p>
+                <p className="text-xs text-center mt-2 text-primary-foreground">SECONDS</p>
             </div>
         </span>
     );

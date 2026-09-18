@@ -14,7 +14,8 @@ export default function LocationDropdown({
                 value={selectedId}
                 onChange={onSelectChange}
                 disabled={isDetecting}
-                className="w-full min-w-[150px] appearance-none border border-gray-300 rounded-full py-2 pl-9 pr-10 font-medium  hover:cursor-pointer"
+                className="w-full min-w-[150px] appearance-none border border-border rounded-full py-2 pl-9 pr-10 font-medium 
+                hover:bg-gray-200 dark:hover:bg-black-900 dark:focus:bg-black-900 hover:cursor-pointer"
             >
                 <option value="my-location">
                     {isDetecting ? "Detecting Location..." : "My Location"}
@@ -28,9 +29,9 @@ export default function LocationDropdown({
 
             </select>
 
-            <MapPin className="absolute left-3 top-1/2 w-4 h-4 text-gray-600 -translate-y-1/2 pointer-events-none" />
+            <MapPin className="absolute left-3 top-1/2 w-4 h-4 text-muted-foreground -translate-y-1/2 pointer-events-none" />
 
-            <ChevronDown className="absolute right-3 top-1/2 w-4 h-4 text-gray-600 -translate-y-1/2 pointer-events-none" />
+            <ChevronDown className="absolute right-3 top-1/2 w-4 h-4 text-muted-foreground -translate-y-1/2 pointer-events-none" />
         </div>
     );
 }

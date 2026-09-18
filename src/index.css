@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @font-face {
   font-family: "Fraunces";
   src: url("/fonts/Fraunces.woff2") format(woff2);
@@ -54,7 +56,7 @@
   --color-primary-800: #122A20;
   --color-primary-850: #0E2018;
   --color-primary-900: #091510;
-  --color-primary-950: #050B08;
+  --color-primary-950: #1A1F1E;
 
 
   --color-accent-50: #F7F4EE;
@@ -70,4 +72,44 @@
   --color-accent-850: #352A1A;
   --color-accent-900: #231C11;
   --color-accent-950: #120E09;
+
+
+  --color-black-900: #222A28;
+
+  --color-background: var(--color-white);
+  --color-foreground: var(--color-black);
+  --color-card: var(--color-white);
+  --color-card-foreground: var(--color-back);
+  --color-primary: var(--color-primary-600);
+  --color-primary-foreground: var(--color-primary-150);
+  --color-accent: var(--color-accent-500);
+  --color-muted: var(--color-gray-100);
+  --color-muted-foreground: var(--color-gray-500);
+  --color-border: var(--color-gray-300);
+}
+
+.dark{
+  --color-background: var(--color-primary-950);
+  --color-foreground: var(--color-white);
+  --color-card: var(--color-black-900);
+  --color-card-foreground: var(--color-white);
+  --color-primary: var(--color-primary-700);
+  --color-primary-foreground: var(--color-primary-150);
+  --color-accent: var(--color-accent-500);
+  --color-muted: var(--color-primary-950);
+  --color-muted-foreground: var(--color-gray-400);
+  --color-border: var(--color-gray-600);
+}
+
+/* index.css, outside @theme */
+html, body {
+    height: 100%;
+}
+
+body {
+    @apply bg-background text-foreground;
+}
+
+#root {
+    min-height: 100%;
 }

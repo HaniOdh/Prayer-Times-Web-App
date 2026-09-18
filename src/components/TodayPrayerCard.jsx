@@ -36,10 +36,10 @@ export default function TodayPrayerCard({location, hijriDate, date, prayers}){
         : fallbackPrayers;
 
     return(
-        <div className="flex flex-col border border-gray-300 rounded-xl p-7">
+        <div className="flex flex-col border border-border rounded-xl p-7 bg-card">
             <div>
                 <h2 className="font-heading text-2xl">Today's times</h2>
-                <span className="text-gray-500 text-sm flex flex-col md:flex-row md:justify-between mt-1">
+                <span className="text-muted-foreground text-sm flex flex-col md:flex-row md:justify-between mt-1">
                     <span>{location} &middot; {hijriDate}</span>
                     <span>{date}</span>
                 </span>

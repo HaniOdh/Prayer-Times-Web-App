@@ -14,7 +14,7 @@ export default function CalendarGrid({currentMonth, selectedDate, onSelectDay}){
     const todayStr = dayjs().format('YYYY-MM-DD');
 
     return(
-        <div className='bg-gray-100 rounded-xl p-3'>
+        <div className='bg-muted rounded-xl p-3'>
             <div className='grid grid-cols-7 text-center text-xs mb-3'>
                 {weekdays.map((day) => (
                     <div key={day} className='p-1'>{day}</div>
@@ -39,10 +39,10 @@ export default function CalendarGrid({currentMonth, selectedDate, onSelectDay}){
                             onClick={() => onSelectDay(dateStr)}
                             className={`h-10 md:h-15 w-full rounded-md text-sm font-medium transition-colors flex items-center justify-center ${
                                 isSelected
-                                ? 'bg-primary-600 text-white font-bold'
+                                ? 'bg-primary text-primary-foreground font-bold'
                                 : isToday
                                 ? 'hover:bg-gray-200 hover:cursor-pointer border border-primary-600 bg-primary-50 text-primary-600 font-bold'
-                                : 'hover:bg-gray-200 hover:cursor-pointer text-gray-600'
+                                : 'hover:bg-gray-200 hover:cursor-pointer text-muted-foreground'
                             }`}
                         >
                             {day}
