@@ -1,4 +1,5 @@
 import { ChevronDown, MapPin } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 
 export default function LocationDropdown({
@@ -7,6 +8,8 @@ export default function LocationDropdown({
     presetCities, 
     onSelectChange
 }){
+
+    const { t } = useTranslation();
 
     return(
         <div className="relative inline-block w-fit">
@@ -18,13 +21,13 @@ export default function LocationDropdown({
                 hover:bg-gray-200 dark:hover:bg-black-900 dark:focus:bg-black-900 hover:cursor-pointer"
             >
                 <option value="my-location">
-                    {isDetecting ? "Detecting Location..." : "My Location"}
+                    {isDetecting ? t('Detecting_Location') : t('My_Location')}
                 </option>
 
                 <option disabled className="text-gray-300">---------</option>
 
                 {presetCities.map((city) => (
-                    <option key={city.id} value={city.id}>{city.name}</option>
+                    <option key={city.id} value={city.id}>{ t(`${city.name}`) }</option>
                 ))}
 
             </select>

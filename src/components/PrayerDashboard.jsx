@@ -6,11 +6,13 @@ import MonthlyTimetable from "./MonthlyTimetable";
 import { usePrayerTimes } from "../hooks/usePrayerTimes";
 import LoadingCard from "./LoadingCard";
 import ErrorCard from "./ErrorCard";
+import { useTranslation } from "react-i18next";
 
 export default function PrayerDashboard({ selectedLocation }) {
     const [selectedDate, setSelectedDate] = useState(dayjs().format('YYYY-MM-DD'));
     const [selectedMonth, setSelectedMonth] = useState(dayjs());
 
+    const { t } = useTranslation();
 
     const { times: currentMonthTimes } = usePrayerTimes({
         year: dayjs().year(),
@@ -33,8 +35,8 @@ export default function PrayerDashboard({ selectedLocation }) {
     );
     
     const todayPrayerCardData = currentDayData ? {
-        hijriDate: currentDayData.date.hijri.day.padStart(2, '0') + ' ' + currentDayData.date.hijri.month.en + ' ' + currentDayData.date.hijri.year,
-        date: currentDayData.date.gregorian.weekday.en + ', ' + currentDayData.date.gregorian.date,
+        hijriDate: currentDayData.date.hijri.day.padStart(2, '0') + ' ' + t(currentDayData.date.hijri.month.en) + ' ' + currentDayData.date.hijri.year,
+        date: t(currentDayData.date.gregorian.weekday.en) + ', ' + currentDayData.date.gregorian.date,
         prayers: currentDayData.timings,
     } : null;
 
@@ -45,7 +47,7 @@ export default function PrayerDashboard({ selectedLocation }) {
     );
 
     const monthlyTimetableData = selectedDayData ? {
-        hijriDate: selectedDayData.date.hijri.day?.padStart(2, '0') + ' ' + selectedDayData.date.hijri.month.en + ' ' + selectedDayData.date.hijri.year,
+        hijriDate: selectedDayData.date.hijri.day?.padStart(2, '0') + ' ' + t(selectedDayData.date.hijri.month.en) + ' ' + selectedDayData.date.hijri.year,
         timings: selectedDayData.timings,
     } : null;
 

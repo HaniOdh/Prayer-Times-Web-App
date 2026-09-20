@@ -1,14 +1,26 @@
 import { useState } from 'react';
 import { Languages } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 
 export default function LanguageSwitchButton(){
 
-    const [isArabic, setIsArabic] = useState(false);
+    const { i18n } = useTranslation();
+
+    const isArabic = i18n.language === 'ar';
+
+    const toggleLanguage = () => {
+        const newLang = isArabic ? 'en' : 'ar';
+
+        i18n.changeLanguage(newLang);
+
+        document.documentElement.dir = newLang === 'ar' ? 'rtl' : 'ltr';
+        document.documentElement.lang = newLang;
+    }
 
     return(
         <button
-            onClick={() => setIsArabic(!isArabic)}
+            onClick={toggleLanguage}
             className='inline-flex items-center justify-center gap-2 py-2 px-4 border border-border rounded-full font-medium 
             hover:bg-gray-200 dark:hover:bg-black-900 hover:cursor-pointer'
         >

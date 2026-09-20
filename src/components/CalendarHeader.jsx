@@ -1,11 +1,15 @@
 import {ChevronLeft, ChevronRight} from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 
 export default function CalendarHeader({currentMonth, onPreviousMonth, onNextMonth}){
+
+    const { t } = useTranslation();
+
     return(
         <div className='flex justify-between items-center'>
             <div className='flex flex-col'>
-                <h2 className='font-heading text-2xl'>Monthly timetable</h2>
+                <h2 className='font-heading text-2xl'>{ t('Monthly_Timetable') }</h2>
                 <p className='text-sm text-muted-foreground'>{currentMonth.format('MMMM-YYYY')}</p>
             </div>
             <div className='flex gap-2'>

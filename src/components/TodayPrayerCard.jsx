@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import PrayerTimeRow from "./PrayerTimeRow";
 import Separator from "./Separator";
+import { useTranslation } from "react-i18next";
 
 dayjs.extend(customParseFormat);
 
@@ -35,10 +36,12 @@ export default function TodayPrayerCard({location, hijriDate, date, prayers}){
           }))
         : fallbackPrayers;
 
+        const { t } = useTranslation();
+
     return(
         <div className="flex flex-col border border-border rounded-xl p-7 bg-card">
             <div>
-                <h2 className="font-heading text-2xl">Today's times</h2>
+                <h2 className="font-heading text-2xl">{ t('Today_Times') }</h2>
                 <span className="text-muted-foreground text-sm flex flex-col md:flex-row md:justify-between mt-1">
                     <span>{location} &middot; {hijriDate}</span>
                     <span>{date}</span>
