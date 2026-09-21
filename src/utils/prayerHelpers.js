@@ -1,6 +1,10 @@
 import dayjs from "dayjs";
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
 import customParseFormat from "dayjs/plugin/customParseFormat";
 
+dayjs.extend(utc);
+dayjs.extend(timezone);
 dayjs.extend(customParseFormat);
 
 const PRAYER_KEYS = ["Fajr", "Dhuhr", "Asr" , "Maghrib", "Isha"];
@@ -8,7 +12,13 @@ const PRAYER_KEYS = ["Fajr", "Dhuhr", "Asr" , "Maghrib", "Isha"];
 export function getNextPrayer(monthTimes, nowMs = Date.now()){
     if(!monthTimes || monthTimes.length === 0) return null;
 
-    const now = dayjs(nowMs);
+    console.log(monthTimes);
+
+    const targetTimezone = monthTimes[0]?.meta?.timezone;
+
+    console.log(targetTimezone);
+
+    const now = dayjs(nowMs).tz(targetTimezone);
     const todayFormatted = now.format("DD-MM-YYYY");
     const todayStr = now.format("YYYY-MM-DD");
 
@@ -20,7 +30,7 @@ export function getNextPrayer(monthTimes, nowMs = Date.now()){
 
     for(const key of PRAYER_KEYS){
         const rawTime = todayData.timings[key]?.split(" ")[0];
-        const prayerDateTime = dayjs(`${todayStr} ${rawTime}`, "YYYY-MM-DD HH:mm");
+        const prayerDateTime = dayjs.tz(`${todayStr} ${rawTime}`, "YYYY-MM-DD HH:mm", targetTimezone);
         const remainingMs = prayerDateTime.diff(now);
 
         if(prayerDateTime.isAfter(now)){
@@ -45,7 +55,7 @@ export function getNextPrayer(monthTimes, nowMs = Date.now()){
         tomorrowData?.timings?.Fajr || todayData.timings.Fajr
     ).split(" ")[0];
 
-    const nextFajrDateTime = dayjs(`${tomorrowStr} ${tomorrowFajrRaw}`, "YYYY-MM-DD HH:mm");
+    const nextFajrDateTime = dayjs.tz(`${tomorrowStr} ${tomorrowFajrRaw}`, "YYYY-MM-DD HH:mm", targetTimezone);
     const remainingMs = nextFajrDateTime.diff(now);
 
     return{
