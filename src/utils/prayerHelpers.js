@@ -12,11 +12,7 @@ const PRAYER_KEYS = ["Fajr", "Dhuhr", "Asr" , "Maghrib", "Isha"];
 export function getNextPrayer(monthTimes, nowMs = Date.now()){
     if(!monthTimes || monthTimes.length === 0) return null;
 
-    console.log(monthTimes);
-
     const targetTimezone = monthTimes[0]?.meta?.timezone;
-
-    console.log(targetTimezone);
 
     const now = dayjs(nowMs).tz(targetTimezone);
     const todayFormatted = now.format("DD-MM-YYYY");

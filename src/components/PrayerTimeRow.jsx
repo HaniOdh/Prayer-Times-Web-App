@@ -25,7 +25,7 @@ export default function PrayerTimeRow({icon, name, status, time}){
                 { t(`${name}`) }
                 <StatusBadge status={status}/>
             </span>
-            <span>
+            <span dir="ltr">
                 {time}
             </span>
         </div>

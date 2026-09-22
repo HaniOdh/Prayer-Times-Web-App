@@ -14,14 +14,14 @@ export default function CalendarGrid({currentMonth, selectedDate, onSelectDay}){
     const todayStr = dayjs().format('YYYY-MM-DD');
 
     return(
-        <div className='bg-muted rounded-xl p-3'>
+        <div dir='ltr' className='bg-muted rounded-xl p-3'>
             <div className='grid grid-cols-7 text-center text-xs mb-3'>
                 {weekdays.map((day) => (
                     <div key={day} className='p-1'>{day}</div>
                 ))}
             </div>
 
-            <div className='grid grid-cols-7 md:gap-3'>
+            <div dir='ltr' className='grid grid-cols-7 md:gap-3'>
                 {paddingSlots.map((_, index) =>(
                     <div key={index} className='h-10'/>
                 ))}

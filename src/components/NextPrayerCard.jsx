@@ -12,13 +12,13 @@ export default function NextPrayerCard({ currentMonthTimes }){
     const { nextPrayer, targetTime, formattedTime, remainingTime } = getNextPrayer(currentMonthTimes, now) || {};
 
     return(
-        <div className="bg-primary p-8 md:p-10 rounded-xl">
+        <div className="flex flex-col items-start text-start bg-primary p-8 md:p-10 rounded-xl">
             <span className="text-primary-foreground text-xs md:text-sm">{ t('Next_Prayer') }</span>
 
-            <span className="flex gap-3 mt-2 items-baseline">
+            <div className="flex gap-3 mt-2 items-baseline">
                 <h1 className="font-heading text-4xl md:text-5xl text-primary-50">{ t(`${nextPrayer}`)}</h1>
-                <p className="text-primary-foreground text-sm">at {formattedTime}</p>
-            </span>
+                <span className="flex gap-1 text-primary-foreground text-sm">{ t('at') } <p dir="ltr">{formattedTime}</p></span>
+            </div>
 
             <Timer
                 key={remainingTime} //to update the component whenever the duration between prayers changes

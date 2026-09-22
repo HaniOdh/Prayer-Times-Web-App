@@ -39,6 +39,7 @@ i18next
                     Algiers: 'Algiers',
                     Istanbul: 'Istanbul',
                     London: 'London',
+                    at: 'at',
                 }
             },
             ar: {
@@ -72,6 +73,7 @@ i18next
                     Algiers: 'الجزائر',
                     Istanbul: 'اسطنبول',
                     London: 'لندن',
+                    at: 'على',
                 }
             }
         }

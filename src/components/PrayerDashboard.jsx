@@ -4,7 +4,6 @@ import NextPrayerCard from "./NextPrayerCard";
 import TodayPrayerCard from "./TodayPrayerCard";
 import MonthlyTimetable from "./MonthlyTimetable";
 import { usePrayerTimes } from "../hooks/usePrayerTimes";
-import LoadingCard from "./LoadingCard";
 import ErrorCard from "./ErrorCard";
 import { useTranslation } from "react-i18next";
 
@@ -50,10 +49,6 @@ export default function PrayerDashboard({ selectedLocation }) {
         hijriDate: selectedDayData.date.hijri.day?.padStart(2, '0') + ' ' + t(selectedDayData.date.hijri.month.en) + ' ' + selectedDayData.date.hijri.year,
         timings: selectedDayData.timings,
     } : null;
-
-    if(isLoading) return(
-        <LoadingCard />
-    );
 
     if(error) return(
         <ErrorCard />

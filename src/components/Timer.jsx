@@ -14,7 +14,7 @@ export default function Timer({ duration = 0 }){
     const { t } = useTranslation();
 
     return(
-        <span className="flex gap-4 md:gap-8 mt-8">
+        <span dir="ltr" className="flex gap-4 md:gap-8 mt-8">
             <div className="flex-col">
                 <div className="font-heading text-5xl md:text-6xl text-primary-50">{hours}</div>
                 <p className="text-xs text-center mt-2 text-primary-foreground">{ t('Hours') }</p>

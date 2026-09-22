@@ -12,7 +12,7 @@ export default function CalendarHeader({currentMonth, onPreviousMonth, onNextMon
                 <h2 className='font-heading text-2xl'>{ t('Monthly_Timetable') }</h2>
                 <p className='text-sm text-muted-foreground'>{currentMonth.format('MMMM-YYYY')}</p>
             </div>
-            <div className='flex gap-2'>
+            <div dir='ltr' className='flex gap-2'>
                 <button
                     onClick={onPreviousMonth}
                     className='flex items-center justify-center w-10 h-10 border border-border rounded-full text-muted-foreground 
