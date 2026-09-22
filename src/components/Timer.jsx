@@ -1,0 +1,38 @@
+import { useTranslation } from "react-i18next";
+
+
+export default function Timer({ duration = 0 }){
+
+    const total_seconds = Math.floor(duration / 1000);
+    const total_minutes = Math.floor(total_seconds / 60);
+    const total_hours = Math.floor(total_minutes / 60);
+
+    const seconds = String(total_seconds % 60).padStart(2, '0');
+    const minutes = String(total_minutes % 60).padStart(2, '0');
+    const hours = String(total_hours % 24).padStart(2, '0');
+
+    const { t } = useTranslation();
+
+    return(
+        <span dir="ltr" className="flex gap-4 md:gap-8 mt-8">
+            <div className="flex-col">
+                <div className="font-heading text-5xl md:text-6xl text-primary-50">{hours}</div>
+                <p className="text-xs text-center mt-2 text-primary-foreground">{ t('Hours') }</p>
+            </div>
+
+            <p className="text-4xl md:text-5xl text-primary-foreground">:</p>
+
+            <div className="flex-col">
+                <div className="font-heading text-5xl md:text-6xl text-primary-50">{minutes}</div>
+                <p className="text-xs text-center mt-2 text-primary-foreground">{ t('Minutes') }</p>
+            </div>
+
+            <p className="text-4xl md:text-5xl text-primary-foreground">:</p>
+
+            <div className="flex-col">
+                <div className="font-heading text-5xl md:text-6xl text-primary-50">{seconds}</div>
+                <p className="text-xs text-center mt-2 text-primary-foreground">{ t('Seconds') }</p>
+            </div>
+        </span>
+    );
+}
