@@ -12,9 +12,7 @@ export function useDarkMode(){
         localStorage.setItem("theme", isDark ? "dark" : "light");
     }, [isDark]);
 
-    console.log("toggling", isDark);
     const toggle = () => setIsDark((prev) => !prev);
 
-    console.log("isDark is now", isDark)
     return { isDark, toggle };
 }

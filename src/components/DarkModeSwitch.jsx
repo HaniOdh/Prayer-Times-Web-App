@@ -6,7 +6,6 @@ export default function DarkModeSwitch(){
 
     const { isDark, toggle } = useDarkMode();
 
-    console.log(isDark);
     return(
         <button
             onClick={toggle}
