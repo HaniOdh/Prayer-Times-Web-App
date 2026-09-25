@@ -55,8 +55,8 @@ export default function PrayerDashboard({ selectedLocation }) {
     );
 
     return (
-        <div className='grid grid-cols-1 md:grid-cols-12 items-start gap-6 mb-6'>
-            <div className='flex flex-col gap-6 col-span-6'>
+        <div className='grid grid-cols-1 min-[980px]:grid-cols-2 items-start gap-6'>
+            <div className='flex flex-col gap-6 col-span-1'>
                 <NextPrayerCard
                     currentMonthTimes={currentMonthTimes}
                 />
@@ -69,7 +69,7 @@ export default function PrayerDashboard({ selectedLocation }) {
                 />
 
             </div>
-            <div className='col-span-6'>
+            <div className='col-span-1'>
                 <MonthlyTimetable
                     currentMonth={selectedMonth}
                     onMonthChange={setSelectedMonth}
