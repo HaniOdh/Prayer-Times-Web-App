@@ -6,7 +6,7 @@ A responsive, bilingual (English / العربية) prayer times web application 
 
 ---
 
-## ✨ Features
+## Features
 
 - **Next prayer countdown** — a live `HH:MM:SS` timer counting down to the next prayer, calculated in the **selected location's timezone** (not the user's), so the countdown stays accurate no matter where the viewer is.
 - **Today's times** — shows all six time slots (Fajr, Sunrise, Dhuhr, Asr, Maghrib, Isha) for the current day together with the **Hijri** and Gregorian dates.
@@ -19,7 +19,7 @@ A responsive, bilingual (English / العربية) prayer times web application 
 
 ---
 
-## 🧰 Tech Stack
+## Tech Stack
 
 | Layer      | Technology |
 |------------|------------|
@@ -48,7 +48,7 @@ The `usePrayerTimes` hook handles fetching with **request cancellation** (via `A
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -101,7 +101,7 @@ The app will be served at `http://localhost:5173`.
 
 ---
 
-## 🌍 Localization
+## Localization
 
 Translations live centrally in `src/i18n.js`:
 
@@ -112,6 +112,6 @@ The language is auto-detected from the browser on first load, and the language b
 
 ---
 
-## 📝 License
+## License
 
 Private project — no license specified.
